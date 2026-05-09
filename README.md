@@ -1,3 +1,2 @@
 # ML-Zoomcamp-Homework
-ML homework
-hello world
+This repository is for my completed notes, homeworks, and projects in ML Zoomcamp.
