@@ -1,15 +1,11 @@
 {
   "name": "Kubernetes Dev Environment",
   "features": {
-    // 1. Installs the Docker daemon inside your Codespace container
-    "ghcr.io/devcontainers/features/docker-in-docker:1": {
-      "version": "latest"
-    },
-    // 2. Installs kubectl (and optionally helm/minikube if you wanted them)
+    // Keep this, as it safely handles kubectl installation
     "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
       "version": "latest"
     }
   },
-  // Installs the standard kind binary after the features are set up
-  "postCreateCommand": "curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.23.0/kind-linux-amd64 && chmod +x ./kind && sudo mv ./kind /usr/local/bin/kind"
+  // This downloads and moves kind to your system path automatically
+  "postCreateCommand": "curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.25.0/kind-linux-amd64 && chmod +x ./kind && sudo mv ./kind /usr/local/bin/kind"
 }
